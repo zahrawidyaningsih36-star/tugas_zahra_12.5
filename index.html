@@ -5,104 +5,190 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CV - Zahra Widyaningsih</title>
     <style>
-        /* Mengubah font dan warna dasar ke pink gelap agar teks jelas dibaca */
+        /* --- Animasi --- */
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+            100% { transform: translateY(0px); }
+        }
+
+        /* --- Dasar --- */
         body { 
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
+            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; 
             line-height: 1.6; 
-            color: #d63384; /* Warna teks utama pink tua */
+            color: #d63384; 
             max-width: 800px; 
             margin: 0 auto; 
             padding: 20px; 
-            background-color: #fff0f6; /* Warna background pink sangat muda */
+            background-color: #fff0f6; /* Pink pastel lembut */
         }
         
         header { 
             text-align: center; 
-            border-bottom: 2px solid #ff85a2; 
-            padding-bottom: 20px; 
-            margin-bottom: 20px; 
+            border-bottom: 3px solid #ff85a2; 
+            padding-bottom: 30px; 
+            margin-bottom: 30px;
+            animation: fadeInUp 0.8s ease-out;
         }
 
-        h1 { margin: 0; color: #c2185b; } /* Nama warna pink marun */
+        /* --- Foto Profil Bulat --- */
+        .profile-container {
+            display: inline-block;
+            margin-bottom: 15px;
+            animation: float 4s ease-in-out infinite; /* Efek mengambang lucu */
+        }
+
+        .profile-img {
+            width: 180px;
+            height: 180px;
+            border-radius: 50%; /* Membuat bulat sempurna */
+            border: 6px solid #ffffff;
+            outline: 3px solid #ff85a2;
+            object-fit: cover;
+            box-shadow: 0 10px 20px rgba(255, 133, 162, 0.3);
+            transition: transform 0.3s ease;
+        }
+
+        .profile-img:hover {
+            transform: scale(1.05) rotate(3deg);
+        }
+
+        /* --- Typography --- */
+        h1 { margin: 10px 0 5px; color: #c2185b; font-size: 2.2em; }
         
         h2 { 
-            color: #ff4d94; 
-            border-left: 5px solid #ff4d94; 
-            padding-left: 10px; 
-            margin-top: 30px; 
+            color: #ffffff; 
+            background: linear-gradient(90deg, #ff4d94, #ff85a2);
+            padding: 8px 15px; 
+            border-radius: 10px;
+            margin-top: 35px; 
+            font-size: 1.3em;
+            display: inline-block;
         }
 
-        .info-kontak { font-style: italic; color: #f06292; }
+        .info-kontak { 
+            font-size: 0.95em; 
+            color: #f06292; 
+            margin-bottom: 5px;
+            font-weight: 500;
+        }
 
+        .biodata-singkat {
+            font-size: 0.9em;
+            color: #ad1457;
+            background: #ffe4e8;
+            display: inline-block;
+            padding: 2px 12px;
+            border-radius: 20px;
+        }
+
+        /* --- Konten Section --- */
         .section { 
             background: #ffffff; 
-            padding: 20px; 
-            border-radius: 15px; 
-            box-shadow: 0 4px 10px rgba(255, 133, 162, 0.2); 
+            padding: 30px; 
+            border-radius: 25px; 
+            box-shadow: 0 10px 30px rgba(255, 133, 162, 0.1); 
             border: 1px solid #ffe4e8;
+            animation: fadeInUp 1.2s ease-out;
         }
 
         ul { list-style-type: none; padding: 0; }
         
         li { 
-            margin-bottom: 10px; 
-            padding-bottom: 5px; 
-            border-bottom: 1px dotted #ffc1d1; 
+            margin-bottom: 15px; 
+            padding-bottom: 10px; 
+            border-bottom: 1px dashed #ffc1d1; 
+            transition: all 0.3s ease;
+        }
+
+        li:hover {
+            padding-left: 15px;
+            color: #c2185b;
+            background-color: #fff9fa;
         }
 
         li:last-child { border-bottom: none; }
 
-        .tahun { font-weight: bold; color: #c2185b; }
+        .tahun { font-weight: bold; color: #c2185b; min-width: 100px; display: inline-block; }
 
-        /* Badge tahun dengan warna pink terang */
         .badge { 
             background: #ff85a2; 
             color: white; 
-            padding: 2px 8px; 
-            border-radius: 10px; 
-            font-size: 0.85em; 
+            padding: 4px 12px; 
+            border-radius: 15px; 
+            font-size: 0.8em; 
             font-weight: bold;
+            margin-right: 8px;
+            box-shadow: 0 2px 5px rgba(255, 133, 162, 0.3);
         }
 
         strong { color: #ad1457; }
+
+        .hobi-box {
+            background: #fff0f6;
+            padding: 15px;
+            border-radius: 15px;
+            border: 1px solid #ffc1d1;
+            font-style: italic;
+        }
+
+        /* --- Responsif HP --- */
+        @media (max-width: 600px) {
+            body { padding: 15px; }
+            .profile-img { width: 140px; height: 140px; }
+            h1 { font-size: 1.8em; }
+        }
     </style>
 </head>
 <body>
 
-<header>  
-    <img src="ChatGPT Image 4 Feb 2026, 10.46.35.png"foto zahra widyaningsih" class="profile-img">
+<header>
+    <div class="profile-container">
+        <img src="https://via.placeholder.com/200" alt="Zahra Widyaningsih" class="profile-img">
+    </div>
     <h1>Zahra Widyaningsih</h1>
-    <p class="info-kontak">Bandung | 08123456789 | Instagram: @zhrawdyngsh</p>
-    <p>Lahir: 16 Februari 2007 | Bahasa: Indonesia</p>
+    <p class="info-kontak">📍 Bandung | 📞 08123456789 | 📸 @zhrawdyngsh</p>
+    <p class="biodata-singkat">🎂 16 Februari 2007 | 🇮🇩 Bahasa Indonesia</p>
 </header>
 
 <div class="section">
-    <h2>Pendidikan</h2>
+    <h2>🎓 Pendidikan</h2>
     <ul>
-        <li><span class="tahun">2023 - 2026:</span> SMA KP Baleendah (Lulus 2026)</li>
-        <li><span class="tahun">2019 - 2022:</span> SMP Negeri 1 Batam</li>
-        <li><span class="tahun">2013 - 2019:</span> SD Negeri 002 Batam</li>
+        <li><span class="tahun">2023 - 2026</span> <strong>SMA KP Baleendah</strong> (Lulus 2026)</li>
+        <li><span class="tahun">2019 - 2022</span> <strong>SMP Negeri 1 Batam</strong></li>
+        <li><span class="tahun">2013 - 2019</span> <strong>SD Negeri 002 Batam</strong></li>
     </ul>
 
-    <h2>Pengalaman & Organisasi</h2>
+    <h2>Organisasi</h2>
     <ul>
         <li><strong>SMA:</strong> Ketua Umum Paskibra</li>
         <li><strong>SMP:</strong> Pengurus OSIS & Pramuka Tingkat Garuda</li>
         <li><strong>SD:</strong> Anggota Pramuka</li>
     </ul>
 
-    <h2>Prestasi & Sertifikat</h2>
+    <h2>🏆 Prestasi & Sertifikat</h2>
     <ul>
-        <li>🏆 <span class="badge">2025</span> Juara Umum 1 LKBB GAPATAR di BPPI</li>
-        <li>🏆 <span class="badge">2025</span> Juara Madya 1 LKBB Lembang</li>
-        <li>🏆 <span class="badge">2025</span> Juara Madya 3 LKBB Pangalengan</li>
-        <li>🥇 <span class="badge">2022</span> Juara 1 POPDA Cabang Silat</li>
-        <li>🏅 <span class="badge">2022</span> Sertifikat Pramuka Garuda (Batam)</li>
+        <li><span class="badge">2025</span> Juara Umum 1 LKBB GAPATAR di BPPI</li>
+        <li><span class="badge">2025</span> Juara Madya 1 LKBB Lembang</li>
+        <li><span class="badge">2025</span> Juara Madya 3 LKBB Pangalengan</li>
+        <li><span class="badge">2022</span> Juara 1 POPDA Cabang Silat</li>
+        <li><span class="badge">2022</span> Sertifikat Pramuka Garuda (Batam)</li>
     </ul>
 
-    <h2>Hobi & Minat</h2>
-    <p>Menggambar, mendengarkan musik, dan menonton drama Korea di waktu luang.</p>
+    <h2>✨ Hobi & Minat</h2>
+    <div class="hobi-box">
+        🎨 Menggambar, 🎵 mendengarkan musik, dan 📺 menonton drama Korea di waktu luang.
+    </div>
 </div>
+
+<footer style="text-align: center; margin-top: 30px; font-size: 0.8em; color: #f06292;">
+    <p>&copy; 2026 Zahra Widyaningsih. Dibuat dengan ✨</p>
+</footer>
 
 </body>
 </html>
